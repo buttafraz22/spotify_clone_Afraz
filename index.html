@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Tux-Your Music Player</title>
+
+    <script src="https://kit.fontawesome.com/5b0849bd5e.js" crossorigin="anonymous" defer></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand"><img src="tux.png" alt="tux">Tux</li>
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="songsList">
+            <h1>My Album</h1>
+            <div class="songItemContainer">
+                <div class="songItem">
+                    <img src="cover.jpg" alt="1">
+                    <span class="songName">Billo(Slow+Reverb)</span>
+                    <span class="songlistplay">
+                        <span class="timestamp">05:34 <i class="fa-solid fa-circle-play"></i></span>
+                    </span>
+                </div>
+                <div class="songItem">
+                    <img src="cover.jpg" alt="2">
+                    <span class="songName">Billo(Slow+Reverb)</span>
+                    <span class="songlistplay">
+                        <span class="timestamp">05:34 <i class="fa-solid fa-circle-play"></i></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="songsBanner"></div>
+    </div>
+    <div class="bottom">
+        <input type="range" name="range" id="progressBar" min="0" max="100" value="0">
+        <div class="icons">
+            <i class="fa-3x fa-solid fa-angle-left" id="previous"></i>
+            <i class="fa-3x fa-solid fa-circle-play" id="masterPlay"></i>
+            <i class="fa-3x fa-solid fa-angle-right" id="next"></i>
+        </div>
+        <div class="songInfo">
+            <img src="musicplay2.gif"  width="43px" alt="2" id="picInfo">Billo (slow+reverb)
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/5b0849bd5e.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

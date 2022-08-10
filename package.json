@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  },
+  "name": "spotify",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buttafraz22/spotify_clone_Afraz.git"
+  },
+  "author": "Afraz Butt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/buttafraz22/spotify_clone_Afraz/issues"
+  },
+  "homepage": "https://github.com/buttafraz22/spotify_clone_Afraz#readme",
+  "description": ""
+}
