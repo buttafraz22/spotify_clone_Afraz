@@ -37,9 +37,6 @@ songItems.forEach((element,i)=>{
     element.getElementsByTagName("span")[0].innerHTML= songs[i].songName;
 })
 
-//audioElement.play()
-
-
 masterPlay.addEventListener('click',()=>{
     if(audioElement.paused || audioElement.currentTime <= 0){
         audioElement.play();
@@ -68,8 +65,7 @@ progressBar.addEventListener('change',()=>{
     
 })
 
-
-const makeAllPlays = ()=>{
+const playAll = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         element.classList.remove('fa-pause-circle');
         element.classList.add('fa-play-circle');
@@ -77,7 +73,7 @@ const makeAllPlays = ()=>{
 }
 Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
     element.addEventListener('click', (e)=>{ 
-        makeAllPlays();
+        playAll();
         songIndex = parseInt(e.target.id);
         e.target.classList.remove('fa-play-circle');
         e.target.classList.add('fa-pause-circle');
