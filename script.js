@@ -1,22 +1,23 @@
 let songIndex = 0;
-let audioElement = new Audio('Billo(Slow+Reverb).mp3');
+let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let progressBar = document.getElementById('progressBar');
 let gifPlay = document.getElementById('picInfo');
 let prev = document.getElementById('previous');
 let next = document.getElementById('next');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
+let masterSongName = document.getElementById('masterSongName');
 
 let songs = [
     {
         songName:"Billo",
-        filePath:"Billo(Slow+Reverb).mp3",
-        coverPath:"cover.jpg"
+        filePath:"songs/1.mp3",
+        coverPath:"cover/1.jpg"
     },
     {
         songName:"Alec Koff(Motivational)",
-        filePath:"Alec Koff - Motivational Speaker (Cinematic Background Music for Videos No Copyright).mp3",
-        coverPath:"cover2.jpg"
+        filePath:"songs/2.mp3",
+        coverPath:"cover/2.jpg"
     }
 ];
 
@@ -55,25 +56,56 @@ progressBar.addEventListener('change',()=>{
 })
 
 
-Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-    element.addEventListener('click', (e)=>{ 
-        makeAllPlays();
-        songIndex = parseInt(e.target.id);
-        e.target.classList.remove('fa-play-circle');
-        e.target.classList.add('fa-pause-circle');
-       /// audioElement.src = `songs[songIndex].filePath`;
-        //console.log(audioElement.src)
-       // masterSongName.innerText = songs[songIndex].songName;
-        audioElement.currentTime = 0;
-        audioElement.play();
-        gifPlay.style.opacity = 1;
-        masterPlay.classList.remove('fa-play-circle');
-        masterPlay.classList.add('fa-pause-circle');
-    })
-})
 const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         element.classList.remove('fa-pause-circle');
         element.classList.add('fa-play-circle');
     })
 }
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    element.addEventListener('click', (e)=>{ 
+        makeAllPlays();
+        songIndex = parseInt(e.target.id);
+        e.target.classList.remove('fa-play-circle');
+        e.target.classList.add('fa-pause-circle');
+        audioElement.src = `songs/${songIndex+1}.mp3`;
+        masterSongName.innerText = songs[songIndex].songName;
+        audioElement.currentTime = 0;
+        audioElement.play();
+        gif.style.opacity = 1;
+        masterPlay.classList.remove('fa-play-circle');
+        masterPlay.classList.add('fa-pause-circle');
+    })
+})
+prev.addEventListener('click',()=>{
+    if(songIndex <= 0){
+        songIndex = 0;
+    }
+    else{
+        songIndex = songIndex - 1 ;
+    }
+
+    audioElement.src = `songs/${songIndex+1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+})
+
+next.addEventListener('click' , ()=>{
+
+    if(songIndex >= 2){
+        songIndex = 0;
+    }
+    else{
+        songIndex = songIndex + 1 ;
+    }
+
+    audioElement.src = `songs/${songIndex+1}.mp3`;
+    masterSongName.innerText = songs[songIndex].songName;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    masterPlay.classList.remove('fa-play-circle');
+    masterPlay.classList.add('fa-pause-circle');
+})
