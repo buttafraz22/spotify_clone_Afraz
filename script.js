@@ -8,6 +8,7 @@ let next = document.getElementById('next');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
 let masterSongName = document.getElementById('masterSongName');
 
+
 let songs = [
     {
         songName:"Billo",
@@ -18,6 +19,16 @@ let songs = [
         songName:"Alec Koff(Motivational)",
         filePath:"songs/2.mp3",
         coverPath:"cover/2.jpg"
+    },
+    {
+        songName:"Baarishen, Anuv Jain",
+        filePath:"songs/3.mp3",
+        coverPath:"cover/3.jpg"
+    },
+    {
+        songName:"Memories, Maroon 5",
+        filePath:"songs/4.mp3",
+        coverPath:"cover/4.jpg"
     }
 ];
 
@@ -45,7 +56,7 @@ masterPlay.addEventListener('click',()=>{
 })
 
 audioElement.addEventListener('timeupdate',()=>{
-    console.log("Time Update");
+   // console.log("Time Update");
     let progressinPercents = parseFloat((audioElement.currentTime / audioElement.duration) *100);
     //console.log(progressinPercents)
     progressBar.value = progressinPercents;
@@ -53,6 +64,8 @@ audioElement.addEventListener('timeupdate',()=>{
 
 progressBar.addEventListener('change',()=>{
     audioElement.currentTime = (progressBar.value * audioElement.duration) / 100;
+   
+    
 })
 
 
